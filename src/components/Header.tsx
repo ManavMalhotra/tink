@@ -11,6 +11,10 @@ const Header = () => {
     if (isclicked) {
       // do something
       console.log("Email: ", email);
+      alert(
+        "Your are added to the waitlist. We will notify you when we launch." +
+          email
+      );
     }
   };
 
@@ -18,7 +22,7 @@ const Header = () => {
     <section className="w-full px-6">
       <img src={HeroImg} className="w-auto h-1/3 max-w-[60vw]" alt="Hero" />
 
-      <div className="flex flex-col items-center justify-center gap-4 px-6 py-2 mx-auto my-16 border border-black rounded-full w-fit md:flex-row flex-nowrap">
+      <div className="flex flex-col items-center justify-center gap-6 px-6 py-2 mx-auto my-16 border border-black rounded-full w-fit md:flex-row flex-nowrap">
         {/* EMAIL  */}
         <input
           id="email"
