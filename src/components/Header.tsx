@@ -2,8 +2,17 @@ import { useState } from "react";
 import HeroImg from "../assets/hero.svg";
 
 const Header = () => {
-  const [title, setTitle] = useState();
+  const [email, setemail] = useState();
   const [isclicked, setisclicked] = useState(false);
+
+  const handleSubmit = () => {
+    setisclicked(true);
+    console.log("clicked");
+    if (isclicked) {
+      // do something
+      console.log("Email: ", email);
+    }
+  };
 
   return (
     <section className="w-full px-6">
@@ -16,12 +25,13 @@ const Header = () => {
           name="email"
           type="text"
           placeholder="johndoe@xyz.com"
+          onChange={(e: any) => setemail(e.target.value)}
           className="py-1 text-lg transition-colors bg-transparent border-b border-gray-300 focus:outline-none focus:border-blue-500"
         />
 
         <button
           className="px-4 py-2 text-lg font-bold text-white bg-black rounded-3xl "
-          onClick={() => setisclicked(true)}
+          onClick={() => handleSubmit()}
         >
           Join Waitlist
         </button>
